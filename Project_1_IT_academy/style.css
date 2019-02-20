@@ -1,0 +1,720 @@
+html, body, div, span, applet, object, iframe, h1,
+h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym,
+address, big, cite, code, del, dfn, em, img, ins, kbd, q,
+s, samp, small, strike, strong, sub, sup, tt,var, b,
+u, i, center, dl, dt, dd, ol, ul, li, fieldset, form,
+label,legend, table, caption, tbody, tfoot, thead, tr, th,
+td, article, aside, canvas, details, embed, figure,
+figcaption, footer, header, hgroup, menu, nav, output,
+ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+}
+
+body {
+  background-color: #f2f4f8;
+  min-width: 300px;
+}
+
+.center {
+  max-width: 960px;
+  margin: 0 auto;
+  font: 14px Arial;
+}
+
+.logo {
+  width: 32px;
+  height: 20px;
+  margin: 18px 0 18px 6px;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+header {
+  background-color: #2d313d;
+  box-shadow: 0 3px 0px #2d313d;
+}
+
+  header .center {
+    background-color: #2d313d;
+    height: 60px;
+    align-items: center;
+  }
+
+  .center .headerElements {
+    float: right;
+    color: #727989;
+    font: 14px Arial;
+  }
+
+  .center .headerElements i {
+    font-size: 18px;
+  }
+
+  .center .headerElements .city {
+    border-bottom: dashed 1px;
+    margin: 0 6px 0 22px;
+  }
+
+  .center .headerElements a {
+    color: #727989;
+  }
+
+  .center .headerElements a .userPhoto {
+    width: 30px;
+    height: 30px;
+    position: relative;
+    top: 10px;
+    padding: 0 24px 0 10px;
+    border-radius: 4px;
+  }
+
+/*---ПОИСК В HEADER для широкого экрана от 641px---*/
+.container {
+  float: right;
+  padding-top: 15px;
+  width: 190px;
+}
+
+  .container input#search {
+    border-radius: 7px;
+    margin-right: 0px;
+    width: 0;
+
+    transition: width 0.55s ease;
+  }
+
+  .container input#search:focus,
+  .container input#search:active {
+    width: 145px;
+  }
+
+  .container:hover input#search {
+    width: 145px;
+  }
+
+  .container .icon i {
+    z-index: 1;
+    padding: 0px;
+  }
+
+
+@media screen and (min-width: 641px) {
+  header .headerMin {
+    display: none;
+  }
+
+  .center .flexCenter .content .formMin {
+    display: none;
+  }
+
+  .mobileMenu {
+    display: none;
+  }
+}
+
+
+
+@media screen and (max-width: 640px) {
+  header .center {
+    display: none;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .headerMin {
+    display: block;
+  }
+
+  .headerMin i.fa-bars {
+    color: grey;
+  }
+
+  /* МОБИЛЬНОЕ МЕНЮ----  */
+.headerMin .mobileMenu {
+  background-color: #2d313d;
+  float: left;
+}  
+
+  .headerMin label {
+    display: inline-block;
+    position: relative;
+  }
+
+  .headerMin .mobileMenu ul {
+    display: block;
+    margin: 0 -300px;
+    transition: margin .6s ease;
+    list-style: none;
+    position: absolute;
+    top: 80px;
+    background-color: #2d313d;
+    width: 150px;
+    border: solid black 2px;
+    font: 26px Arial;
+    z-index: 3;
+  }
+
+  .headerMin .mobileMenu ul li {
+    padding: 3px 10px;
+
+  }
+
+  .headerMin .mobileMenu ul li a {
+    text-decoration: none;
+    color: white;
+  }
+
+  .headerMin .mobileMenu [type="checkbox"] {
+    display: none;
+  }
+
+  input.toggleMenu:checked~ul {
+    display: block;
+    margin: 0;
+    transition: margin .6s ease-in;
+
+  }
+
+
+  .center .flexCenter .content {
+    width: 100%;
+  }
+
+  .center .flexCenter .menu {
+    display: none;
+  }
+
+  .center .flexCenter .content h1 {
+    font-size: 50px;
+    padding: 50px 75px 40px 85px;
+    text-align: center;
+  }
+
+  .center .flexCenter .content h1 i {
+    padding: 0;
+  }
+
+  .center .flexCenter .content .form {
+    display: none;
+  }
+
+/*  ПОИСК В СONTENT для небольшиз экранов до 640px*/
+.containerSearch2 {
+    float: left;
+    /* padding-top: 15px; */
+    /*   width: 220px;  */
+
+
+  }
+
+  .containerSearch2 input#search2 {
+    border-radius: 5px;
+    margin-right: 0px;
+    width: 0;
+    z-index: 0;
+
+    transition: width 0.55s ease;
+  }
+
+  .containerSearch2 input#search2:focus,
+  .containerSearch2 input#search2:active {
+    width: 250px;
+
+  }
+
+  .containerSearch2:hover input#search2 {
+    width: 250px;
+    height: 27px;
+  }
+
+  .containerSearch2 .icon i {
+    z-index: 1;
+    padding: 0px;
+  }
+
+  .center .flexCenter .content .formMin {
+    display: inline-block;
+    background-color: #f2f4f8;
+    padding: 30px 45px;
+    color: #99a1b3;
+    font-size: 38px;
+    width: 87%;
+  }
+
+  .center .flexCenter .content .formMin .right i {
+    padding: 0;
+  }
+
+  .center .flexCenter .content .formMin .right i:last-child {
+    margin-left: 48px;
+  }
+
+  .center .flexCenter .content .post {
+    font-size: 24px;
+    margin: 60px;
+  }
+
+  .center .flexCenter .content .post .image {
+    margin-right: 20px;
+  }
+
+  .center .flexCenter .content .post .postInt {
+    margin-left: 80px;
+  }
+
+  .center .flexCenter .content .post .member {
+    margin-left: 10px;
+  }
+
+  .center .flexCenter .content .post .comments {
+    margin-right: 0;
+  }
+
+  .center .flexCenter .content .post .title {
+    font-size: 28px;
+  }
+
+  .center .flexCenter .content .post .text {
+    font-size: 26px;
+  }
+
+  .center .flexCenter .content .buttons {
+    margin: 84px 0 89px;
+  }
+
+  .center .flexCenter .content .buttons a {
+    font-size: 22px;
+  }
+
+  .center .flexCenter .content .buttons a .fa-angle-left {
+    padding-right: 20px;
+  }
+
+  .center .flexCenter .content .buttons a .fa-angle-right {
+    padding-left: 20px;
+  }
+
+  .center .flexCenter .content .buttons a:first-child {
+    padding: 27px 34px 27px 30px;
+    margin-right: 14px;
+  }
+
+  .center .flexCenter .content .buttons a:last-child {
+    padding: 27px 30px 27px 40px;
+    margin-right: 0;
+  }
+
+  .center .flexCenter .content .footer .navFooter {
+    text-align: center;
+    padding: 30px 0;
+    font-size: 18px;
+  }
+
+  .center .flexCenter .content .footer .navFooter a {
+    padding: 0;
+  }
+
+  .center .flexCenter .content .footer .copy {
+    display: none;
+  }
+
+  .center .flexCenter .content .formMin .right {
+    float: right;
+  }
+}
+
+
+
+.headerMin {
+  color: white;
+  text-align: center;
+}
+
+.headerMin i {
+  font-size: 36px;
+  padding: 32px 0 32px 10px;
+}
+
+.headerMin .logoWhite {
+  margin-left: 35px;
+}
+
+.headerMin span {
+  font: 36px Arial;
+  margin: 0 65px 0 50px;
+}
+
+.headerMin img {
+  position: relative;
+  top: 16px;
+}
+
+.userPhotoBig {
+  width: 60px;
+  height: 60px;
+  border-radius: 4px;
+  margin-right: 45px;
+}
+
+.headerMin i:hover {
+  color: grey;
+}
+
+
+.fa {
+  padding-right: 32px;
+}
+
+@media screen and (max-width: 610px) {
+  .headerMin i {
+    font-size: 25px;
+  }
+
+  .headerMin .fa-bars {
+    float: left;
+    padding-left: 10px;
+    font-size: 20px;
+  }
+
+  .headerMin .logoWhite {
+    width: 60px;
+    margin-left: 15px;
+  }
+
+  .headerMin span {
+    font-size: 20px;
+    margin: 0 13px;
+  }
+
+  .headerMin .userPhotoBig {
+    width: 45px;
+    height: 45px;
+    margin-right: 15px;
+  }
+
+  .center .flexCenter .content h1 {
+    font-size: 34px;
+    padding: 25px 10px;
+  }
+
+  .center .flexCenter .content h1 i {
+    padding: 0;
+  }
+
+  .center .flexCenter .content h1 span {
+    margin-left: 0;
+  }
+
+  .center .flexCenter .content .formMin {
+    font-size: 28px;
+    padding: 15px 40px;
+  }
+
+  .containerSearch2:hover input#search2 {
+    width: 145px;
+    height: 20px;
+  }
+
+  .center .flexCenter .content .post {
+    font-size: 14px;
+    margin: 30px 20px;
+  }
+
+  .center .flexCenter .content .post .postInt .comments {
+    float: none;
+    display: block;
+    padding-top: 5px;
+  }
+
+  .center .flexCenter .content .post .postInt .title {
+    font-size: 18px;
+  }
+
+  .center .flexCenter .content .post .postInt .text {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .center .flexCenter .content .formMin {
+    padding: 15px;
+    width: 93%;
+  }
+
+  .center .flexCenter .content .formMin .right i:last-child {
+    margin-left: 10px;
+  }
+}
+
+.nav {
+  background-color: #646d81;
+  height: 40px;
+}
+
+  .nav a {
+    text-decoration: none;
+    color: white;
+    display: inline-block;
+    padding: 7px 0 12px;
+    margin-right: 26px;
+    border-top: solid #646d81 5px;
+    transition: .3s ease;
+  }
+
+  .nav a:hover {
+    border-top: solid white 5px;
+  }
+
+.flexCenter {
+  display: flex;
+  background-color: white;
+  box-shadow: 0 3px 10px #e0e2e6;
+}
+
+.menu {
+  border-right: 1px solid #E0E4ED;
+  width: 170px;
+  display: block;
+  padding: 20px 0 0 0;
+  float: left;
+}
+
+  .menu li {
+    list-style-type: none;
+    padding: 9px 28px 9px 23px;
+    border-left: solid white 5px;
+    transition: .3s ease;
+    white-space: pre-wrap;
+  }
+
+  .menu li:hover {
+    border-left: solid #646d81 5px;
+  }
+
+  .menu li a {
+    color: #99A1B3;
+  }
+
+  .menu .submenu {
+    margin-top: 32px;
+    padding: 9px 28px 9px 23px;
+    font: 18px Georgia;
+    color: black;
+    border-left: solid white 5px;
+    /* не работает  */
+  }
+
+
+
+
+.content {
+  display: block;
+  width: calc(100% - 170px);
+}
+
+.content h1 {
+  padding: 30px 0 20px 30px;
+  font: 30px Georgia;
+  display: block;
+}
+
+.content h1 span {
+  margin-left: 28px;
+  border-bottom: dashed 1px;
+}
+
+.form {
+  background-color: #f2f4f8;
+  padding: 5px 30px;
+  color: #99a1b3;
+}
+
+.form input[type="text"] {
+  padding-left: 10px;
+  outline: none;
+  font: 14px Arial;
+  width: 280px;
+  height: 40px;
+  border: solid #d6d9e1 1px;
+  border-radius: 5px;
+  display: inline-block;
+  background: url(images/search.png) no-repeat 260px 9px;
+  background-color: white;
+}
+
+.item {
+  display: inline-block;
+  float: right;
+  position: relative;
+  bottom: 30px;
+}
+
+.item span {
+  margin: 0 86px 0 0;
+  font: 12px Georgia;
+}
+
+.item i {
+  margin-right: 30px;
+  font-size: 18px;
+  padding: 0;
+}
+
+@media screen and (max-width:780px) {
+  .item span {
+    margin: 0 15px 0 0;
+  }
+}
+
+.post {
+  font: 12px Arial;
+  color: #99a1b3;
+  margin: 30px;
+}
+
+.image {
+  width: 60px;
+  float: left;
+  margin-right: 14px;
+}
+
+.postInt {
+  margin-left: 74px;
+}
+
+.postInt .fa {
+  padding: 0;
+}
+
+.member {
+  padding: 5px 15px;
+  background-color: #f2f4f8;
+  border-radius: 5px;
+  margin-left: 26px;
+}
+
+.comments {
+  float: right;
+  margin-right: 28px;
+}
+
+.comments span {
+  margin-right: 10px;
+}
+
+.title {
+  color: #4f9cd4;
+  font: bold 16px Arial;
+  padding: 5px 0 5px;
+}
+
+.text {
+  color: black;
+  font-size: 14px;
+  padding-bottom: 14px;
+}
+
+.buttons {
+  text-align: center;
+  margin-bottom: 86px;
+}
+
+  .buttons a {
+    text-decoration: none;
+    color: black;
+    font: 14px Arial;
+    border: solid #99a1b3 1px;
+    border-radius: 4px;
+    padding: 10px 13px 10px 18px;
+  }
+
+  .buttons a:first-child {
+    margin-right: 10px;
+    padding: 10px 18px 10px 13px;
+  }
+
+  .buttons a:last-child {
+    margin-right: 10px;
+    padding: 10px 13px 10px 18px;
+  }
+
+  .buttons a .fa-angle-left {
+    padding-right: 12px;
+  }
+
+  .buttons a .fa-angle-right {
+    padding: 0 0 0 12px;
+  }
+
+.footer {
+  color: #99a1b3;
+  font: 12px Arial;
+}
+
+  .navFooter {
+    background-color: #f2f4f8;
+    padding-left: 28px;
+    margin-bottom: 1px;
+  }
+
+  .navFooter a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 14px 0;
+    margin-right: 18px;
+    color: #99a1b3;
+  }
+
+.copy {
+  background-color: #f2f4f8;
+  padding: 14px 0 14px 28px;
+}
+
+.copy img {
+  margin-right: 10px;
+  position: relative;
+  top: 3px;
+}
+
+@media screen and (max-width: 610px) {
+  .center .flexCenter .content .buttons {
+    margin: 60px 0 70px;
+  }
+
+  .center .flexCenter .content .buttons a {
+    font-size: 16px;
+  }
+
+  .center .flexCenter .content .buttons a:first-child {
+    padding: 17px 30px 17px 20px;
+  }
+
+  .center .flexCenter .content .buttons a:last-child {
+    padding: 17px 20px 17px 30px;
+  }
+
+  .center .flexCenter .content .buttons a .fa-angle-left {
+    padding-right: 8px;
+  }
+
+  .center .flexCenter .content .buttons a .fa-angle-right {
+    padding-left: 8px;
+  }
+
+  .center .flexCenter .content .footer .navFooter {
+    text-align: center;
+    padding: 30px 0;
+    font-size: 14px;
+  }
+
+  .center .flexCenter .content .footer .navFooter a {
+    margin-right: 8px;
+  }
+}
