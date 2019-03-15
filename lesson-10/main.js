@@ -76,6 +76,39 @@ function getAmountVowel(string) {
 console.log(getAmountVowel('Написать чистую функцию'));
 
 
+function findOftenWord(text) {
+  var textSplit = text.toLowerCase().split(' ');
+  var textString = textSplit.join(' ');
+  var wordsNumber = {};
+  var arrOfKeys = [];
+  var arrOfValues = [];
+  var maxNumber;
+  var repeat;
+
+  for (i = 0; i < textSplit.length - i - 1; i++) {
+    wordsNumber[textSplit[i]] = textString.split(textSplit[i]).length - 1;
+  }
+
+  for (var key in wordsNumber) {
+    arrOfKeys.push(key);
+    arrOfValues.push(wordsNumber[key]);
+  }
+
+  maxNumber = arrOfValues[0];
+
+  for (var j = 0; j < arrOfKeys.length; j++) {
+    if (maxNumber <= arrOfValues[j]) {
+      maxNumber = arrOfValues[j];
+      repeat = arrOfKeys[j];
+    }
+  }
+  return 'Максимальное число повторений у слова ' + '"' + repeat + '"' + ' - ' + maxNumber + '.'
+}
+
+var text = "Хороший день День был вчера был был был."
+console.log(findOftenWord(text));
+
+
 Задание 6*:
 Написать функцию, которая будет принимать текст в качестве параметра.У текста должны быть пробелы, точки, запятые,
 восклицательные и вопросительные знаки.Текст необходимо разбить на предложения(по точкам, восклицательным и
@@ -97,5 +130,7 @@ function divideSent(text) {
 }
 var text = 'Надо написать функцию! Чтобы выводила текст, буквы, или другую? Без запятых, точек, и других знаков.';
 divideSent(text);
+
+
 
 
