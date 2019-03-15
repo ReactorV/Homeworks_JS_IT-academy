@@ -76,3 +76,26 @@ function getAmountVowel(string) {
 console.log(getAmountVowel('Написать чистую функцию'));
 
 
+Задание 6*:
+Написать функцию, которая будет принимать текст в качестве параметра.У текста должны быть пробелы, точки, запятые,
+восклицательные и вопросительные знаки.Текст необходимо разбить на предложения(по точкам, восклицательным и
+вопросительным знакам - убрав их).Для каждого из предложений вывести текст предложения
+и рядом количество букв в нем(без учета пробелов, запятых и т.д. - именно букв).
+
+function divideSent(text) {
+  var text1 = text.split('?').join('.');
+  var text2 = text1.split('!').join('.');
+  var arrOfSentence = text2.split('.');
+  
+  for (i = 0; i < arrOfSentence.length - 1; i++) {
+    var withoutCommas = arrOfSentence[i].split(',').join('');
+    var withoutHypens = withoutCommas.split('-').join('');
+    var withoutSpaces = withoutHypens.split(' ').join('');
+    var numberOfLetters = withoutSpaces.length;
+    console.log("Текст предлжения: " + arrOfSentence[i] + ' |всего букв: ' + numberOfLetters);
+  }
+}
+var text = 'Надо написать функцию! Чтобы выводила текст, буквы, или другую? Без запятых, точек, и других знаков.';
+divideSent(text);
+
+
