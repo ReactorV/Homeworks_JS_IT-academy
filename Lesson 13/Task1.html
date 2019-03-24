@@ -1,0 +1,26 @@
+<!-- Задание 1:
+Добавить на страницу два поля для ввода - X и Y и кнопку "Create".
+Если хотя бы одно из полей пустое - кнопка дизэйблится.
+Поля должны принимать только числа до 10, в противном случае должно выводиться сообщение об ошибке.
+По клику на кнопку должна отрисоваться шахматная доска с размерами X по горизонтали и Y по вертикали.
+По клику на любое поле доски - цвета всех полей должны изменяться на противоположные. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style1.css">
+  <title>Задача 1</title>
+</head>
+<body>
+  <form>
+    <p>Ось Х:</p>
+    <input type="text" name="x" id="xCoord"/>
+    <p>Ось Y:</p>
+    <input type="text" name="y" id="yCoord"/>
+    <input type="button" id="btn" value="Create" disabled>
+  </form>
+ 
+ <script src='task1.js'></script> 
+</body>
