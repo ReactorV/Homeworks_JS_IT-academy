@@ -1,0 +1,98 @@
+@borrad: 7px;
+@cursor: pointer;
+
+body {
+  background-color: #1E1E1E;
+}
+#wrapper {
+  background-color: #333333;
+  width: 650px;
+  height: 300px;
+  border-radius: @borrad;
+  margin: 250px auto;
+  position: relative;
+  
+  button {
+    background-color: #204056;
+    color: #ADADAD;
+    border-radius: @borrad;
+    padding: 5px;
+    position: absolute;
+    top: 30px;
+    right: 35px;
+    font-weight: bold;
+    transition: background-color 0.3s ease-in;
+    &:hover{
+      cursor: @cursor;
+      background-color: #5F52F2;
+    }
+  }
+}
+#window {
+    background-color: #ADADAD;
+    width: 580px;
+    height: 180px;
+    border-radius: 0 9px 9px 9px;
+    position: absolute;
+    top: 90px;
+    left: 35px;
+  }
+.btn {
+    background-color: #ADADAD;
+    width: 110px;
+    height: 40px;
+    border-radius: 7px 7px 0 0;
+    display: inline-block;
+    color: #1E1E1E;
+    font: bold 18px/40px sans-serif;
+    text-align: center;
+    margin: 50px 0 0 35px;
+
+    &:hover {
+      cursor: @cursor;
+    }
+    
+  }
+.avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: @borrad;
+  margin: 12px 0 0 20px;
+}
+
+.textBlock {
+  width: 180px;
+  height: 25px;
+  position: absolute;
+  z-index: 1;
+  left: 220px;
+  font: italic 18px sans-serif;
+}
+
+.textBlock1 {
+  .textBlock;
+  top: 60px;
+}
+
+.textBlock2 {
+  .textBlock;
+  top: 85px;
+}
+
+.active {
+  background-color: #ADADAD;
+  color: white;
+}
+
+.closed {
+  background-color: #FFCD02;
+  color: #204056;
+  transition: background-color 0.3s ease-in;
+  &:hover {
+    background-color: #E5F1FB;
+  }
+}
+
+
+
+
