@@ -1,0 +1,35 @@
+<!-- Задание 1:
+    Написать свой секундомер в формате mm:ss:msms. 
+    Изначально на странице должна быть кнопка "Запустить". При запуске секундомера текст кнопки меняется на "Приостановить".
+    Если пользователь нажимает на кнопку "Приостановить" - ее текст должен измениться на "Возобновить".
+    Использовать data-атрибут, хранящий состояние кнопки.
+    Также после старта работы секундомера должны появиться кнопки "Сохранить отметку" и "Сбросить".
+    Кнопки должны работать соответственным образом.
+    Максимальное количество минут - 60. После этого таймер останавливается. Тестировать на значениях поменьше.
+    * Секундомер должен работать после перезагрузки страницы.
+    (Время может идти медленнее, чем в реальной жизни.) -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style2.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="container">
+    <h1>
+      <p id="clockFace">00:00:00</p>
+    </h1>
+    <div id="controls">
+      <button id="startPause" data-action="start"> Запустить </button>
+      <!-- <button onclick="reset()" id="reset"><b id="reset">Reset</b></button> -->
+    </div>
+  </div>
+  <script src="timer2.js"></script>
+</body>
+</html>
