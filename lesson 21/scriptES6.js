@@ -172,13 +172,9 @@ let arr = [
     {salary: '2000$'}
 ]
 
-function unitObject(arr) {
-    let newObj =  arr.reduce(function (a, b) { 
-        let obj = Object.assign(a, b);
-        return obj;
-    });
-    return newObj;
-}
+ function concatObjects(arr) {
+        return arr.reduce((previous, current) => Object.assign(previous, current), {});
+    }
 }
 
 
@@ -230,47 +226,51 @@ function Animal(name) {
   console.log(barsik.stroke().feed()); */
 {
   class Animal {
-      constructor(name) {
-          this.name = name;
-          this._foodAmount = 50;
-      }
+        constructor(name) {
+            this.name = name;
+            this._foodAmount = 50;
+        }
 
-      _getFormattedFoodAmount() {
-          return `${this._foodAmount} гр.`;
-      }
+        _formatFoodAmount() {
+            return `${this._foodAmount} гр.`;
+        }
 
-      dailyNorm(amount) {
-          if (!arguments.length) return this._foodAmount;
+        dailyNorm(amount) {
+            if (!arguments.length) return this._formatFoodAmount();
 
-          if (amount < 50 || amount > 500) {
-              return 'Недопустимое количество корма.';
-          }
-          this._foodAmount = amount;
-      };
+            if (amount < 50 || amount > 500) {
+                return 'Недопустимое количество корма.';
+            }
 
-      feed() {
-          return `Насыпаем в миску ${this._getFormattedFoodAmount()} корма.`;
-      };
-  }
+            this._foodAmount = amount;
+        }
 
-  class Cat extends Animal {
-      constructor(name) {
-          super();
-          this.name = name;
-      }
+        feed() {
+            console.log(`Насыпаем в миску ${this.dailyNorm()} корма.`);
+        }
+    }
 
-      feed() {
-          console.log(`${super.feed()} 
-            Кот доволен ^_^`);
-          return this;
-      }
+    class Cat extends Animal {
+        constructor(name) {
+            super(arguments);
+        }
 
-      stroke() {
-          console.log('Гладим кота');
-          return this;
-      };
-  }
-  var barsik = new Cat('Барсик');
-  console.log(barsik.feed().stroke());
-  console.log(barsik.stroke().feed());
+        feed() {
+            super.feed();
+
+            console.log('Кот доволен ^_^');
+            return this;
+        }
+
+        stroke() {
+            console.log('Гладим кота.');
+            return this;
+        }
+    }
+
+    let barsik = new Cat('Барсик');
+
+    console.log(barsik.feed().stroke().stroke().feed());
+
+    barsik = null;
 }
