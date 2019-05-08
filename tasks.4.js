@@ -95,5 +95,6 @@ function treeSum(arr) {
       summ += treeSum(numberOrArr);
     }  
   }
+    
   return summ;
 }
