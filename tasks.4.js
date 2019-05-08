@@ -83,32 +83,17 @@ var arr = [ 5, 7,
 ] 
 
 //SOLUTION---------------------------------
-var arr = [ 5, 7,
-            [4, [2], 8, [1,3], 2 ],
-            [9, [] ],
-            1, 8
-          ]; 
+function treeSum(arr) {
+  var summ = 0;
 
-function treeSum(array, length) {
-  var res = [];
-  var sum = 0;
-  
-  for (var i = 0; i < array.length; i++) {
-    if (!array[i].length) {
-      res.push( + array[i]);
-    } else {
-      for(var z = 0; z < treeSum(array[i], null).length; z ++) {
-        res.push(treeSum(array[i], null)[z]);
-      }
-    }
-  }
+  for(var i = 0; i < arr.length; i++) {
+    var numberOrArr = arr[i];
 
-  if(length) {
-    for (i = 0; i < res.length; i++){
-      sum += res[i];
-    }
-    return sum;
+    if(typeof(numberOrArr) === 'number' && !isNaN(numberOrArr)) {
+      summ += numberOrArr;
+    } else if (typeof(numberOrArr) === 'object' && typeof(numberOrArr.length)) {
+      summ += treeSum(numberOrArr);
+    }  
   }
-  return res;
+  return summ;
 }
-var x = treeSum(arr, arr.length);
